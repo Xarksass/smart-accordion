@@ -1,0 +1,66 @@
+#sa-panel-1 {
+    background-color: #447aa0;
+    .btn.btn-inverse:hover { color: #447aa0; }
+}
+#sa-panel-2 {
+    background-color: #009383;
+    .btn.btn-inverse:hover { color: #009383; }
+}
+#sa-panel-3 {
+    background-color: #76a840;
+    .btn.btn-inverse:hover { color: #76a840; }
+}
+#sa-panel-4 {
+    background-color: #ddba27;
+    .btn.btn-inverse:hover { color: #ddba27; }
+}
+#sa-panel-5 {
+    background-color: #e78b39;
+    .btn.btn-inverse:hover { color: #e78b39; }
+}
+
+h1, h2 {
+    font-family: 'Bevan', cursive;
+    font-size: 54px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    &.btn-inverse {
+        position: relative;
+        padding: 9px 20px 11px;
+        line-height: 1.3333333;
+        background-color: transparent;
+        border-color: #f8f8f8;
+        border-width: 2px;
+        color: #f8f8f8;
+        z-index: 2;
+        border-radius: 0;
+        transition: all .25s ease 0s;
+        font-weight: bold;
+        font-size: 16px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            top: 0;
+            left: 0;
+            background-color: #f8f8f8;
+            z-index: -1;
+            -moz-transition: .25s;
+            -webkit-transition: .25s;
+            -o-transition: .25s;
+            transition: .25s;
+        }
+
+        &:hover {
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+.smart-accordion {
+	height: 500px;
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	margin-bottom: 50px;
+
+	&:hover {
+		.sa-panel-heading {
+			margin-top: -68px;
+		}
+		.spelling {
+			visibility: hidden;
+			height: 0;
+			width: 0;
+			opacity: 0;
+		}
+	}
+}
+.sa-panel {
+	min-width: 10%;
+	width: 20%;
+	height: 500px;
+	border-right: 1px solid rgba(51,51,51,.1);
+	border-left: 1px solid rgba(51,51,51,.1);
+	border-collapse: collapse;
+	background: #746bf7;
+	transition: width .5s ease-in;
+	overflow: hidden;
+
+	&:hover {
+		width: 100%;
+
+		.sa-title {
+			align-self: flex-start;
+			transition: all .75s ease .6s;
+
+			span {
+				opacity: 1;
+				visibility: visible;
+				max-width: 100%;
+				transition: all .75s ease 0s;
+
+				&.fa {
+					margin-left: 20px;
+				}
+			}
+		}
+		.sa-desc {
+			opacity: 1;
+			max-width: 100%;
+			padding: 0 20px;
+			//max-height: 100%;
+			visibility: visible;
+			transition: opacity .75s ease .6s;
+		}
+		.sa-panel-heading:before {
+			opacity: 1;
+			transition: all .75s ease 0s;
+		}
+	}
+}
+.sa-panel-body {
+	display: flex;
+	padding: 50px;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 500px;
+}
+.sa-panel-heading {
+	display: inline-block;
+	position: relative;
+	margin-top: 0;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -30px;
+		right: -33px;
+		padding: 60px;
+		display: block;
+		background-color: rgba(0,0,0,.2);
+		transform: rotate(45deg);
+		z-index: 0;
+		opacity: 0;
+	}
+}
+.sa-title {
+	font-size: 72px;
+	color: #f8f8f8;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 35px;
+	margin-top: -25px;
+	font-family: 'Bevan', cursive;
+	white-space: nowrap;
+	position: relative;
+	z-index: 1;
+
+	span {
+		opacity: 0;
+		visibility: hidden;
+		max-width: 0;
+		display: inline-block;
+
+		&.fa {
+			font-size: 85%;
+			margin-left: 0;
+			position: relative;
+		}
+	}
+}
+.sa-desc {
+	font-size: 18px;
+	color: #f8f8f8;
+	opacity: 0;
+	max-width: 0;
+	height: 0;
+	padding: 0;
+	visibility: hidden;
+
+	p:last-child {
+		margin-top: 25px;
+		margin-bottom: 0;
+	}
+}
+.spelling {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 48px;
+	position: relative;
+	bottom: -80px;
+	color: #f8f8f8;
+	visibility: visible;
+	width: auto;
+	height: auto;
+	opacity: 1;
+	transition: all .5s ease;
+}
